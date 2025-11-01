@@ -77,10 +77,25 @@
       color: #333333;
       line-height: 1.9;
     }
-    table {
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 24px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      width: 100%;
+    }
+    .table-wrapper table,
+    .table-wrapper table#main {
+      width: auto !important;
+      min-width: 100%;
+      border-collapse: collapse;
+      background-color: #FFFFFF;
+      display: table;
+    }
+    table, table#main {
       width: 100%;
       border-collapse: collapse;
-      margin: 24px 0;
       background-color: #FFFFFF;
     }
     th {
@@ -92,6 +107,7 @@
       font-size: 0.9em;
       border-bottom: 2px solid #E5E5E5;
       letter-spacing: 0.3px;
+      white-space: nowrap;
     }
     td {
       padding: 14px 12px;
@@ -118,17 +134,103 @@
       body {
         padding: 20px 10px;
       }
+      .container {
+        border-radius: 8px;
+      }
       .header {
-        padding: 40px 24px;
+        padding: 40px 20px;
       }
       h1 {
-        font-size: 1.8em;
+        font-size: 1.75em;
+        letter-spacing: -0.3px;
+      }
+      .date-info {
+        font-size: 0.9em;
       }
       .content {
-        padding: 40px 24px;
+        padding: 40px 20px;
+      }
+      .section {
+        margin-bottom: 48px;
       }
       h2 {
         font-size: 1.4em;
+        margin-bottom: 20px;
+      }
+      .divider {
+        width: 50px;
+        margin: 6px 0 24px 0;
+      }
+      .result-box {
+        padding: 20px 24px;
+        font-size: 0.95em;
+      }
+      .table-wrapper {
+        margin: 20px -20px;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0 20px;
+      }
+      .table-wrapper table,
+      .table-wrapper table#main {
+        font-size: 0.8em;
+        width: auto !important;
+        min-width: 100%;
+      }
+      .table-wrapper th,
+      .table-wrapper td {
+        padding: 10px 6px;
+        font-size: 0.9em;
+        white-space: nowrap;
+      }
+      table, table#main {
+        font-size: 0.85em;
+      }
+      th {
+        padding: 12px 8px;
+        font-size: 0.85em;
+      }
+      td {
+        padding: 10px 8px;
+        font-size: 0.9em;
+      }
+      .footer {
+        padding: 24px 20px;
+        font-size: 0.8em;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+      .content {
+        padding: 32px 16px;
+      }
+      .result-box {
+        padding: 16px 20px;
+        font-size: 0.9em;
+      }
+      .table-wrapper {
+        margin: 20px -16px;
+        padding: 0 16px;
+      }
+      .table-wrapper table,
+      .table-wrapper table#main {
+        font-size: 0.75em;
+      }
+      .table-wrapper th,
+      .table-wrapper td {
+        padding: 8px 4px;
+        font-size: 0.85em;
+      }
+      table, table#main {
+        font-size: 0.8em;
+      }
+      th, td {
+        padding: 10px 6px;
       }
     }
   </style>
@@ -169,7 +271,7 @@ table.cell td{
 </style>
 </head>
 <body>
-<table id="main" cellspacing="0">
+<div class="table-wrapper"><table id="main" cellspacing="0">
 <tr>
 	<td>順位</td>
 	<td>チーム</td>
@@ -258,7 +360,7 @@ table.cell td{
 	<td>1144</td>
 	<td>-518</td>
 </tr>
-</table>
+</table></div>
 </body>
 </html>
       </div>
@@ -310,7 +412,7 @@ table.cell td{
 </style>
 </head>
 <body>
-<table id="main" cellspacing="0">
+<div class="table-wrapper"><table id="main" cellspacing="0">
 <tr>
 	<td>&nbsp;</td>
 					<td width=""><a href="./g_team_timetable.php?e=421&t=1">草クイズ</a></td>
@@ -329,14 +431,14 @@ table.cell td{
 														<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">144</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -350,70 +452,70 @@ table.cell td{
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">144</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">60</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">48</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">60</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">48</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -433,84 +535,84 @@ table.cell td{
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">12</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">48</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">24</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">48</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">12</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">24</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -523,70 +625,70 @@ table.cell td{
 														<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">162</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">128</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">27</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">27</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">162</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -600,14 +702,14 @@ table.cell td{
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">128</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -620,56 +722,56 @@ table.cell td{
 														<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">144</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">24</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">24</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">144</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -683,28 +785,28 @@ table.cell td{
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">108</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">108</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -717,84 +819,84 @@ table.cell td{
 														<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">60</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">60</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">6</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">48</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">48</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">6</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -814,42 +916,42 @@ table.cell td{
 														<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">54</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">30</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">36</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -863,42 +965,42 @@ table.cell td{
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">30</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">54</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">北大</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">36</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -911,28 +1013,28 @@ table.cell td{
 														<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">6</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">36</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
@@ -946,61 +1048,61 @@ table.cell td{
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">愛好会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">NQP</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">36</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#CCCCFF" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">8</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">200</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">邸</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">Q日の会</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">8</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 																<td bgcolor="#FFCCCC" >
 										<center>
 								<b>
-					<table class="cell">
+					<div class="table-wrapper"><table class="cell">
 					<tr>
 					<td style="border:none;"><span style="font-size:12px;">チセ</span></td>
 					<td style="border:none;"><span style="font-size:12px;">vs</span></td>
 					<td style="border:none;"><span style="font-size:12px;">草クイズ</span></td>
 					</tr>
 					<tr><td style="border:none;font-size:14pt;">200</td><td style="border:none;">-</td><td style="border:none;font-size:14pt;">6</td></tr>
-					</table>
+					</table></div>
 				</b>
 								</center>
 		</td>
 			</tr>
-</table>
+</table></div>
 <a href="./g_index.php?e=421">トップへ</a>
 </body>
 </html>
